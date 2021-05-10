@@ -38,9 +38,9 @@ public class UniqueValueValidatior implements ConstraintValidator<UniqueValue, S
 
         if(resultList.size() < 1) return true;
 
-        logger.info("Tentativa de entrada de mais de uma proposa pra o mesmo CPF/CNPJ " +
-                value.substring(value.length()-3) + " Tentativa de nova proposta");
+        logger.info("Tentativa de entrada de mais de uma proposta para o mesmo CPF/CNPJ " +
+                value.substring(value.length()-3) + "Tentativa de nova proposta");
 
         throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Já existe uma proposta pra este " + campo);
     }
-}
+} 
