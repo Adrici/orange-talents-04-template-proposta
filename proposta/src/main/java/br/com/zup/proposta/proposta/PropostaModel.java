@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import br.com.zup.proposta.compartilhado.CpfOrCnpj;
+import br.com.zup.proposta.compartilhado.UniqueValue;
 
 @Entity
 @Table
@@ -16,6 +17,7 @@ public class PropostaModel {
 	
 	@NotBlank
 	@CpfOrCnpj
+	@UniqueValue(targetClass = PropostaModel.class, campo = "documento")
 	private String documento;
 	
 	@NotBlank
