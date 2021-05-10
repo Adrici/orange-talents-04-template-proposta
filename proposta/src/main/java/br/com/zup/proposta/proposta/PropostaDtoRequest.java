@@ -8,11 +8,13 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import br.com.zup.proposta.compartilhado.CpfOrCnpj;
+import br.com.zup.proposta.compartilhado.UniqueValue;
 
 public class PropostaDtoRequest {
 	
 	@NotBlank
 	@CpfOrCnpj
+	@UniqueValue(targetClass = PropostaModel.class, campo = "documento")
 	private String documento;
 	
 	@NotBlank
