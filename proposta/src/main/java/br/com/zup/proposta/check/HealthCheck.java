@@ -1,4 +1,4 @@
-package br.com.zup.casa.codigo.check;
+package br.com.zup.proposta.check;
 
 
 import java.util.HashMap;
