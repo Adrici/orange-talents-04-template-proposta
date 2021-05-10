@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/proposta")
@@ -20,14 +21,14 @@ public class PropostaController {
 	
 
 	
-	@PostMapping
+	@PostMapping 
 	@Transactional
-	public ResponseEntity<PropostaDtoResponse> cadastrar(@RequestBody @Valid PropostaDtoRequest request) {
-	
-		PropostaModel proposta = request.toModel(); 
-		propostaRepository.save(proposta); 
-		
-		return ResponseEntity.ok(new PropostaDtoResponse(proposta)); 		
+	public ResponseEntity<?> criaCadastro(@Valid @RequestBody PropostaDtoRequest request, UriComponentsBuilder builder) {
+		PropostaModel  proposta = request.toModel();
+		proposta = propostaRepository.save(proposta);
+
+		return ResponseEntity
+				.created(builder.path("/proposta/{id}").buildAndExpand(proposta .getId()).toUri()).build();
 	}
 
 }
