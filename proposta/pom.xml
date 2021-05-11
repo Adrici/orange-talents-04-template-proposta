@@ -8,11 +8,11 @@
 		<version>2.3.10.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.zupacademy.jonathan</groupId>
+	<groupId>br.com.zup.proposta</groupId>
 	<artifactId>proposta</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>proposta</name>
-	<description>Implementando o desafio de proposta</description>
+	<description>Desafio de proposta</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
