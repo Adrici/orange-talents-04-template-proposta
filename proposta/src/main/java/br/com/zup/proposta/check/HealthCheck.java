@@ -22,4 +22,6 @@ public class HealthCheck implements HealthIndicator{
 	        return Health.status(Status.UP).withDetails(details).build(); 
 	        
 	    } 
+	//Criando O Health Check para verificar a saúde da api 
+	 // Via Spring Actuator no Pom do projeto. 
 }
