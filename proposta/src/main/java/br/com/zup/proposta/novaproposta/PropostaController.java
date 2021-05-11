@@ -45,7 +45,7 @@ public class PropostaController {
 	public void consultaFinanceira(PropostaModel proposta){
         PropostaResultado resultado;
         try{
-            logger.info("Enviando proposta {} para analise financeira", proposta.getId());
+            logger.info(" proposta {} enviada para analise", proposta.getId());
             analiseClienteFeing.analise(new AnaliseSolicitacaoRequest(proposta));
             resultado = PropostaResultado.ELEGIVEL;
         }catch (FeignException.UnprocessableEntity e){
