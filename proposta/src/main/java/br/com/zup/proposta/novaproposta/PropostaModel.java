@@ -1,4 +1,4 @@
-package br.com.zup.proposta.proposta;
+package br.com.zup.proposta.novaproposta;
 import java.math.BigDecimal;
 
 import javax.persistence.*;
@@ -17,7 +17,6 @@ public class PropostaModel {
 	
 	@NotBlank
 	@CpfOrCnpj
-	@UniqueValue(targetClass = PropostaModel.class, campo = "documento")
 	private String documento;
 	
 	@NotBlank
@@ -33,6 +32,9 @@ public class PropostaModel {
 	@NotNull
 	@Positive
 	private BigDecimal salario;
+	
+	@Enumerated(EnumType.STRING )
+	private PropostaResultado resultado = PropostaResultado.NAO_ANALISADO;
 	
 	@Deprecated 
 	public PropostaModel() {
@@ -73,6 +75,14 @@ public class PropostaModel {
 	public   BigDecimal getSalario() {
 		return salario;
 	}
+
+	public PropostaResultado getResultado() {
+		return resultado;
+	}
+
+	public void setResultado(PropostaResultado resultado) {
+		this.resultado = resultado;
+	}
 	
-	
+
 }

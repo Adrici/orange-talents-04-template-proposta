@@ -1,6 +1,6 @@
 package br.com.zup.proposta.analise;
 
-import br.com.zup.proposta.proposta.PropostaModel;
+import br.com.zup.proposta.novaproposta.PropostaModel;
 
 public class AnaliseSolicitacaoRequest {
 

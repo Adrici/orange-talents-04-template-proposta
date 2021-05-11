@@ -34,7 +34,7 @@ public class UniqueValueValidatior implements ConstraintValidator<UniqueValue, S
         List<?> resultList = entityManager.createQuery("SELECT 1 FROM " + targetClass.getName() + " where " + campo + " = :value")
                 .setParameter("value", value).getResultList();
 
-        Assert.state(resultList.size() <= 1, "É prmitido apenas uma proposta pra este CPF/CNPJ");
+        Assert.state(resultList.size() <= 1, "É permitido apenas uma proposta pra este CPF/CNPJ");
 
         if(resultList.size() < 1) return true;
 

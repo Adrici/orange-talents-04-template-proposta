@@ -1,12 +1,11 @@
 package br.com.zup.proposta.analise;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.cloud.openfeign.FeignClient;  
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "analiseProposta", url = "${analise.solicitacao.url}")
+@FeignClient(value = "analiseProposta", url = "${analise.host}")
 public interface AnaliseClienteFeing {
 
-    @PostMapping("/api/solicitacao")
+    @PostMapping
     public AnaliseResultadoResponse analise (AnaliseSolicitacaoRequest solicitacaoRequest);
-}
+} 
