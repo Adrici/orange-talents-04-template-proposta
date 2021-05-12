@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @Component
 public interface CartaoClienteFeing {
 
-    @RequestMapping(method = RequestMethod.GET,  produces = "application/json")
+    @GetMapping("/api/cartoes?idProposta")
     public CartaoResponse consultaCartao(@RequestParam("idProposta") Long idProposta);
 
-    
-    
-}
+}  

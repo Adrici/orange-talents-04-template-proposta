@@ -8,7 +8,7 @@ public class CartaoResponse {
 
     private Long id;
     private String titular;
-    private LocalDateTime emitidoEm;
+    private LocalDateTime emitidoEm; 
     private Integer limite;
     private String idProposta;
 

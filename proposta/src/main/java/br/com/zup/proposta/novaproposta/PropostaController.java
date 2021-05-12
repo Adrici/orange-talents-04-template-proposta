@@ -24,7 +24,7 @@ public class PropostaController {
 	@Autowired
 	private  PropostaRepository propostaRepository; 
 	
-	 private Logger logger = LoggerFactory.getLogger(UniqueValueValidatior.class);
+	 private Logger logger = LoggerFactory.getLogger(PropostaController.class);
 	 
 	@Autowired
 	 private AnaliseClienteFeing analiseClienteFeing; 

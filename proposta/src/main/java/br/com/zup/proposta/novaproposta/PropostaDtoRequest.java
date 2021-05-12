@@ -30,6 +30,8 @@ public class PropostaDtoRequest {
 	@NotNull
 	@Positive
 	private BigDecimal salario;
+	
+	
 
 	public PropostaDtoRequest(@NotBlank String documento, @NotBlank @Email String email, @NotBlank String nome,
 			@NotBlank String endereco, @NotNull @Positive BigDecimal salario) {
