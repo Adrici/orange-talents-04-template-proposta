@@ -31,9 +31,8 @@ public class CartaoModel {
     
     @NotNull
     private Integer limite;
-   
   
-   @NotNull @OneToOne @JoinColumn(name = "proposta")
+    @NotNull @OneToOne @JoinColumn(name = "proposta")
     private PropostaModel proposta;
    
    @Enumerated(value = EnumType.STRING)
@@ -42,5 +41,47 @@ public class CartaoModel {
     @Deprecated
     public CartaoModel() {
     }
+
+	
+
+	public CartaoModel(@NotNull LocalDateTime emitidoEm, @NotBlank String titular, @NotBlank String numero,
+			@NotNull Integer limite, @NotNull PropostaModel proposta) {
+	
+		this.emitidoEm = emitidoEm;
+		this.titular = titular;
+		this.numero = numero;
+		this.limite = limite;
+		this.proposta = proposta;
+
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public LocalDateTime getEmitidoEm() {
+		return emitidoEm;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public Integer getLimite() {
+		return limite;
+	}
+
+	public PropostaModel getProposta() {
+		return proposta;
+	}
+
+	public StatusCartao getStatus() {
+		return status;
+	}
+
 	
 }
