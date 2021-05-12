@@ -1,7 +1,6 @@
 package br.com.zup.proposta.cartao;
 
 import java.time.LocalDateTime;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -40,9 +39,7 @@ public class CartaoModel {
 
     @Deprecated
     public CartaoModel() {
-    }
-
-	
+    }	
 
 	public CartaoModel(@NotNull LocalDateTime emitidoEm, @NotBlank String titular, @NotBlank String numero,
 			@NotNull Integer limite, @NotNull PropostaModel proposta) {
