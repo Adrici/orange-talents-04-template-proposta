@@ -14,4 +14,4 @@ public class PropostaApplication {
 		SpringApplication.run(PropostaApplication.class, args);
 	}
 
-}
+}  

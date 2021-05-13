@@ -8,9 +8,6 @@ import org.springframework.stereotype.Component;
 import br.com.zup.proposta.novaproposta.PropostaRepository;
 import feign.FeignException;
 
-
-
-
 @Component
 public class CartaoScheduler {
 	
