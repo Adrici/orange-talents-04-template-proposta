@@ -13,3 +13,4 @@ public interface PropostaRepository extends JpaRepository<PropostaModel, Long> {
 	//Exemplo: findByNameAndDocumento (name, documento).
 
 } 
+ 
