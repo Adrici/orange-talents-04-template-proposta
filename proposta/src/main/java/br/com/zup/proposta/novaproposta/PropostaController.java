@@ -38,10 +38,9 @@ public class PropostaController {
 		consultaFinanceira(proposta); 
 		propostaRepository.save(proposta);
 
-		return ResponseEntity
-				.created(builder.path("/proposta/{id}").buildAndExpand(proposta.getId()).toUri()).build();
+		return ResponseEntity.created(builder.path("/proposta/{id}").buildAndExpand(proposta.getId()).toUri()).build();
 	}
-	
+	 
 	public void consultaFinanceira(PropostaModel proposta){
         PropostaResultado resultado;
         try{
