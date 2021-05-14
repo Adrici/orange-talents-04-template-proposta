@@ -1,5 +1,7 @@
 package br.com.zup.proposta.biometria;
 
-public interface cadastroBiometriaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface cadastroBiometriaRepository extends JpaRepository<CadastroBiometriaModel, Long>{
 
 }

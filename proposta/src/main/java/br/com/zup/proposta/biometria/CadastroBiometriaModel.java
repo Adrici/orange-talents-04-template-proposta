@@ -33,4 +33,36 @@ public class CadastroBiometriaModel {
 	@CreationTimestamp
 	private LocalDateTime cadastradaEm = LocalDateTime.now();
 	
+	@Deprecated
+	public CadastroBiometriaModel() {
+		
+	}
+
+	public CadastroBiometriaModel(@NotNull byte[] biometria, @NotNull CartaoModel cartao) {
+		
+		this.biometria = biometria;
+		this.cartao = cartao;
+	}
+
+	//construtores
+	public byte[] getBiometria() {
+		return biometria;
+	}
+
+	public void setBiometria(byte[] biometria) {
+		this.biometria = biometria;
+	}
+
+	//getters
+
+	public CartaoModel getCartao() {
+		return cartao;
+	}
+
+	public void setCartao(CartaoModel cartao) {
+		this.cartao = cartao;
+	}
+
+	
+	
 }
