@@ -26,7 +26,7 @@ public class CadastroBiometriaRequest {
 	}
 
 	
-	public CadastroBiometriaRequest toModel(Optional<CartaoModel> cartao) {
+	public CadastroBiometriaRequest toModel(CartaoModel cartao) {
 		String biometria = Base64.getEncoder().encodeToString(fingerPrint.getBytes());
 		return new CadastroBiometriaRequest(biometria);
 		
