@@ -15,7 +15,7 @@ public class CadastroBiometriaRequest {
 	
 
 	public CadastroBiometriaRequest(@NotNull String fingerPrint) {
-		super();
+		
 		this.fingerPrint = fingerPrint;
 	}
 
@@ -28,7 +28,7 @@ public class CadastroBiometriaRequest {
 	
 	public CadastroBiometriaModel toModel(CartaoModel cartao) {
 		String biometria = Base64.getEncoder().encodeToString(fingerPrint.getBytes());
-		return new CadastroBiometriaModel(biometria);
+		return new CadastroBiometriaModel(biometria,cartao);
 		
 	}
 

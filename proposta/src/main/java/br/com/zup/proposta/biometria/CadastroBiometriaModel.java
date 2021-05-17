@@ -34,13 +34,11 @@ public class CadastroBiometriaModel {
 		
 	}
 
-	public CadastroBiometriaModel(Long id, @NotNull String fingerPrint, @NotNull CartaoModel cartao,
-			@NotNull LocalDateTime cadastradaEm) {
-		super();
-		this.id = id;
+	public CadastroBiometriaModel(@NotNull String fingerPrint, @NotNull CartaoModel cartao) {
+
 		this.fingerPrint = fingerPrint;
 		this.cartao = cartao;
-		this.cadastradaEm = cadastradaEm;
+
 	}
 
 	public Long getId() {
@@ -60,5 +58,4 @@ public class CadastroBiometriaModel {
 	}
 
 	
-
 }

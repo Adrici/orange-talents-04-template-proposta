@@ -42,7 +42,7 @@ public class CadastroBiometriaController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(id);
 		}
 		
-		CadastroBiometriaModel biometria = request.toModel(cartao);
+		CadastroBiometriaModel biometria = request.toModel(cartao.get());
 		executorTransacao.salvaEComita(biometria);
 		logger.info("Biometria cadastrada {}", cartao.get().getId());
 		URI uri = uriBuilder.path("/biometria/{id}").build(biometria.getId());
