@@ -5,14 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.annotations.CreationTimestamp;
-
 import br.com.zup.proposta.cartao.CartaoModel;
 
 
@@ -23,7 +19,7 @@ public class CadastroBiometriaModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
-	private byte[] biometria;
+	private String fingerPrint;
 	
 	@NotNull
 	@ManyToOne
@@ -38,31 +34,31 @@ public class CadastroBiometriaModel {
 		
 	}
 
-	public CadastroBiometriaModel(@NotNull byte[] biometria, @NotNull CartaoModel cartao) {
-		
-		this.biometria = biometria;
+	public CadastroBiometriaModel(Long id, @NotNull String fingerPrint, @NotNull CartaoModel cartao,
+			@NotNull LocalDateTime cadastradaEm) {
+		super();
+		this.id = id;
+		this.fingerPrint = fingerPrint;
 		this.cartao = cartao;
+		this.cadastradaEm = cadastradaEm;
 	}
 
-	//construtores
-	public byte[] getBiometria() {
-		return biometria;
+	public Long getId() {
+		return id;
 	}
 
-	public void setBiometria(byte[] biometria) {
-		this.biometria = biometria;
+	public String getFingerPrint() {
+		return fingerPrint;
 	}
-
-	//getters
 
 	public CartaoModel getCartao() {
 		return cartao;
 	}
 
-	public void setCartao(CartaoModel cartao) {
-		this.cartao = cartao;
+	public LocalDateTime getCadastradaEm() {
+		return cadastradaEm;
 	}
 
 	
-	
+
 }
