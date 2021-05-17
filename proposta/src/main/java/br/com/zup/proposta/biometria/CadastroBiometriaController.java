@@ -33,7 +33,7 @@ public class CadastroBiometriaController {
 	
 	@PostMapping("/{id}")
     @Transactional
-    public ResponseEntity<?> salvarBiomatria(@PathVariable("id") Long id,
+    public ResponseEntity<?> salvarBiomatria(@PathVariable("id") String id,
                                              @RequestBody @Valid CadastroBiometriaRequest request,
                                              UriComponentsBuilder uriBuilder  ){
 		Optional<CartaoModel> cartao = cartaoRepository.findById(id);

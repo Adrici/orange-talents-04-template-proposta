@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface CartaoRepository extends JpaRepository<CartaoModel, Long>{
+public interface CartaoRepository extends JpaRepository<CartaoModel, String>{
 	 Optional<CartaoModel> findByPropostaId(Long propostaId);
 }
 

@@ -6,14 +6,14 @@ import br.com.zup.proposta.novaproposta.PropostaModel;
 
 public class CartaoResponse {
 
-    private Long id;
+    private String id;
     private String titular;
     private LocalDateTime emitidoEm; 
     private Integer limite;
     private String idProposta;
 
    
-	 public CartaoResponse(Long id, String titular, LocalDateTime emitidoEm, Integer limite, String idProposta) { 
+	 public CartaoResponse(String id, String titular, LocalDateTime emitidoEm, Integer limite, String idProposta) { 
 		this.id = id;
 		this.titular = titular;
 		this.emitidoEm = emitidoEm;
@@ -22,7 +22,7 @@ public class CartaoResponse {
 	}
 
 		 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -45,7 +45,7 @@ public class CartaoResponse {
 
 
 	public CartaoModel toModel(PropostaModel proposta){
-	        return new  CartaoModel(emitidoEm, titular, idProposta, limite, proposta);  
+	        return new  CartaoModel(id, emitidoEm, titular, limite, proposta);
 	    }
 
 	@Override

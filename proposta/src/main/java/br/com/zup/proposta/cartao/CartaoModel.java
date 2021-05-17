@@ -1,3 +1,9 @@
+
+
+
+
+
+
 package br.com.zup.proposta.cartao;
 
 import java.time.LocalDateTime;
@@ -18,15 +24,12 @@ import br.com.zup.proposta.novaproposta.PropostaModel;
 @Table(name ="cartao")
 public class CartaoModel {
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id 
+    private String id;
     @NotNull
     private LocalDateTime emitidoEm;
     @NotBlank
     private String titular;
-    
-    @NotBlank
-    private String numero;
     
     @NotNull
     private Integer limite;
@@ -41,18 +44,19 @@ public class CartaoModel {
     public CartaoModel() {
     }	
 
-	public CartaoModel(@NotNull LocalDateTime emitidoEm, @NotBlank String titular, @NotBlank String numero,
+    
+ public CartaoModel(String id, @NotNull LocalDateTime emitidoEm, @NotBlank String titular,
 			@NotNull Integer limite, @NotNull PropostaModel proposta) {
-	
+		
+		this.id = id;
 		this.emitidoEm = emitidoEm;
 		this.titular = titular;
-		this.numero = numero;
 		this.limite = limite;
 		this.proposta = proposta;
 
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -64,9 +68,6 @@ public class CartaoModel {
 		return titular;
 	}
 
-	public String getNumero() {
-		return numero;
-	}
 
 	public Integer getLimite() {
 		return limite;
