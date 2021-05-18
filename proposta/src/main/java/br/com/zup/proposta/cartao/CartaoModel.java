@@ -1,9 +1,3 @@
-
-
-
-
-
-
 package br.com.zup.proposta.cartao;
 
 import java.time.LocalDateTime;

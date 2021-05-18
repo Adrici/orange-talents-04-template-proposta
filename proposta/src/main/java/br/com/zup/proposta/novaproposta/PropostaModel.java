@@ -43,7 +43,6 @@ public class PropostaModel {
 
 	public PropostaModel(Long id, @NotBlank String documento, @NotBlank @Email String email, @NotBlank String nome,
 			@NotBlank String endereco,  @NotNull @Positive BigDecimal salario) {
-		super();
 		this.id = id;
 		this.documento = documento;
 		this.email = email;

@@ -30,7 +30,8 @@ public class CartaoScheduler {
 		var propostasAprovadas = propostaRepository.findAll();
 
         for (var proposta : propostasAprovadas) {
-        //faze rum if proposta elegivel status - para refatorar e melhorar o codigo - para nao testea o Nao_elegivel Atoa no caso de sistemas grandes. 
+        //faze rum if proposta elegivel status - para refatorar e melhorar o 
+        	//codigo - para nao testea o Nao_elegivel Atoa no caso de sistemas grandes. 
         	if(
         			cartaoRepository.findByPropostaId(proposta.getId()).isEmpty()	
         			) {
