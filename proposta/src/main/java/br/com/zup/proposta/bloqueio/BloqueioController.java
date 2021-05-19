@@ -57,14 +57,18 @@ public class BloqueioController {
         logger.info("Cartão bloqueado com sucesso");  
 		return ResponseEntity.ok().build();
 	}
-	
+		
+/* -- Notificando o sistema legado do bloqueio do nosso cartão--
+Quando o retorno do sistema bancário retornar sucesso (status code na faixa 200) = "BLOQUEADO".
+Quando o retorno do sistema bancário retornar erro (status code na faixa 400 ou 500) = não  alterar o estado do cartão.
+ */
 	private void bloquearCartao(BloqueioModel bloqueio, CartaoModel cartao, BloqueioRequest request) {
 		try {
 			cartaoClienteFeing.bloqueioCartao(cartao.getId(), request);
 			cartao.setBloqueio(bloqueio);
 			executorTransacao.atualizaEComita(cartao);
 		} catch (FeignException e) {
-			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY,"Falha ao bloquear o cartão.");
+			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY,"O bloqueio falhou!");
 		}
 		
 	}
