@@ -24,7 +24,7 @@ import br.com.zup.proposta.compartilhado.ExecutorTransacao;
 import feign.FeignException;
 
 @RestController
-@RequestMapping("/bloqueio")
+@RequestMapping("/bloqueio") 
 public class BloqueioController {
 	
 	@Autowired
