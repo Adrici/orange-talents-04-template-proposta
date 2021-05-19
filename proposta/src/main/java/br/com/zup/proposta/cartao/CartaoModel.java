@@ -1,6 +1,8 @@
 package br.com.zup.proposta.cartao;
 
 import java.time.LocalDateTime;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.*;
 
+import br.com.zup.proposta.bloqueio.BloqueioModel;
 import br.com.zup.proposta.novaproposta.PropostaModel;
 
 @Entity
@@ -33,7 +36,10 @@ public class CartaoModel {
    
    @Enumerated(value = EnumType.STRING)
     private StatusCartao status = StatusCartao.ATIVO;
-
+   
+   @OneToOne(mappedBy = "cartao", cascade = CascadeType.MERGE)
+   private BloqueioModel bloqueio;
+ 
     @Deprecated
     public CartaoModel() {
     }	
@@ -75,5 +81,15 @@ public class CartaoModel {
 		return status;
 	}
 
-	
+
+	public boolean verificaBloqueado() {
+		return this.status.equals(StatusCartao.BLOQUEADO);
+	}
+
+
+	public void setBloqueio(BloqueioModel bloqueio) {
+		 this.bloqueio = bloqueio;
+	        this.status = StatusCartao.BLOQUEADO;
+		
+	}
 }

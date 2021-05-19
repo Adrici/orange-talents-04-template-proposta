@@ -31,13 +31,14 @@ public class BloqueioModel {
 	@NotNull
 	@OneToOne
 	private CartaoModel cartao;
-	public BloqueioModel(Long id, LocalDateTime instanteBloqueio, @NotBlank String ipCliente,
+	public BloqueioModel(@NotBlank String ipCliente,
 			@NotBlank String userAgent, CartaoModel cartao) {
 
 		this.ipCliente = ipCliente;
 		this.userAgent = userAgent;
 		this.cartao = cartao;
 	}
+	
 	@Deprecated
 	public BloqueioModel() {}
 	
