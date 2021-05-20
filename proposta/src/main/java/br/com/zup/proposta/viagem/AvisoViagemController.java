@@ -1,10 +1,8 @@
 package br.com.zup.proposta.viagem;
 
 import java.util.Optional;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,12 +37,13 @@ public class AvisoViagemController {
 				HttpServletRequest servletRequest,
 				@RequestBody @Valid AvisoViagemRequest request){
 			
+//Armazenada no sistema, com um identificador gerado pelo sistema.
 			Optional<CartaoModel> cartao = cartaoRepository.findById(id);
 	        if(cartao.isEmpty()){
 	        	logger.warn("Cartão {} inesxistente=", id);
 	        	return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cartão não encontrado");
 	        }
-	        
+
 	        try {
 				AvisoViagemModel novoAvisoViagem = request.toModel(cartao.get(), servletRequest.getLocalAddr(), 
 																servletRequest.getHeader("User-Agent"));

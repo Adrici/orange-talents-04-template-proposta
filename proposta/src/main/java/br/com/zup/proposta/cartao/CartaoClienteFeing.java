@@ -18,9 +18,8 @@ public interface CartaoClienteFeing {
     
     @PostMapping("/{id}/bloqueios") 
     public void bloqueioCartao(@PathVariable String id, @RequestBody @Valid BloqueioRequest request);
-
+    
     @PostMapping("/{id}/avisos") 
     public void avisarViagem(@PathVariable String id, @RequestBody @Valid AvisoViagemRequest request);
-
    
 }  
