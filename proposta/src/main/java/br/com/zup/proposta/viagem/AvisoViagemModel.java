@@ -2,7 +2,6 @@ package br.com.zup.proposta.viagem;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,11 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
-
 import org.hibernate.annotations.CreationTimestamp;
-
 import com.sun.istack.NotNull;
-
 import br.com.zup.proposta.cartao.CartaoModel;
 
 @Entity

@@ -1,12 +1,8 @@
 package br.com.zup.proposta.viagem;
 
 import java.time.LocalDate;
-
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
-
-import com.sun.istack.NotNull;
-
 import br.com.zup.proposta.cartao.CartaoModel;
 
 public class AvisoViagemRequest {

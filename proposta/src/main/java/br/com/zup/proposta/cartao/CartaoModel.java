@@ -1,6 +1,7 @@
 package br.com.zup.proposta.cartao;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,12 +9,14 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.*;
 
 import br.com.zup.proposta.bloqueio.BloqueioModel;
 import br.com.zup.proposta.novaproposta.PropostaModel;
+import br.com.zup.proposta.viagem.AvisoViagemModel;
 
 @Entity
 @Table(name ="cartao")
@@ -37,6 +40,9 @@ public class CartaoModel {
    
    @OneToOne(mappedBy = "cartao", cascade = CascadeType.MERGE)
    private BloqueioModel bloqueio;
+   
+   @OneToMany(mappedBy = "cartao", cascade = CascadeType.MERGE)
+   private Set<AvisoViagemModel> viagens;
  
     @Deprecated
     public CartaoModel() {
@@ -89,5 +95,11 @@ public class CartaoModel {
 		 this.bloqueio = bloqueio;
 	        this.status = StatusCartao.BLOQUEADO;
 		
+	}
+
+
+	public void setViagem(AvisoViagemModel viagem) {
+		this.viagens.add(viagem);
+		this.status = StatusCartao.EM_VIAGEM;
 	}
 }
