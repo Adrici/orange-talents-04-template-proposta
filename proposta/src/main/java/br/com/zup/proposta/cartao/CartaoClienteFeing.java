@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.zup.proposta.bloqueio.BloqueioRequest;
+import br.com.zup.proposta.carteira.CarteiraRequest;
+import br.com.zup.proposta.carteira.CarteiraResponse;
 import br.com.zup.proposta.viagem.AvisoViagemRequest;
 
 @FeignClient(value = "cartao", url = "${cartao.host}")
@@ -22,5 +24,8 @@ public interface CartaoClienteFeing {
    //Usando o Feing para notificar o sistema bancário sobre avisarViagem 
     @PostMapping("/{id}/avisos") 
     public void avisarViagem(@PathVariable String id, @RequestBody @Valid AvisoViagemRequest request);
+
+    @PostMapping("/{id}/carteiras") 
+	public CarteiraResponse associarCarteira(@PathVariable String id, @RequestBody CarteiraRequest request);
    
 }  

@@ -8,7 +8,6 @@ import br.com.zup.proposta.cartao.CartaoModel;
 @Entity
 public class CarteiraModel {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;
 	@NotBlank
 	private String idAssociacao;
@@ -35,22 +34,28 @@ public class CarteiraModel {
 	public CarteiraModel() {
 		
 	}
-	
+
 	public String getId() {
 		return id;
 	}
+
 	public String getIdAssociacao() {
 		return idAssociacao;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public TipoCarteira getCarteira() {
 		return carteira;
 	}
+
 	public CartaoModel getCartao() {
 		return cartao;
 	}
+	
+	
 	
 	
 	
