@@ -2,5 +2,5 @@ package br.com.zup.proposta.carteira;
 
 public enum TipoCarteira {
 	PAYPAL,
-	SAMSUNG_PLAY;
+	SAMSUNG_PAY;
 }
