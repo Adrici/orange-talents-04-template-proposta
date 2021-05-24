@@ -8,8 +8,8 @@ import org.springframework.security.crypto.encrypt.Encryptors;
 public class OfuscadorEncryptors implements AttributeConverter<String, String>{
 
 
-//@param atributo será ofuscado (bando de dados)
-//@return documento criptografado (bando de dados)
+//@param atributo será ofuscado (banco de dados)
+//@return documento criptografado (banco de dados)
 
 	@SuppressWarnings("deprecation")
 	@Override
