@@ -9,7 +9,7 @@ import br.com.zup.proposta.novaproposta.PropostaRepository;
 import feign.FeignException;
 
 @Component
-public class CartaoScheduler {
+public class CartaoScheduler { 
 	
 	@Autowired
 	private CartaoClienteFeing cartaoClienteFeing;
