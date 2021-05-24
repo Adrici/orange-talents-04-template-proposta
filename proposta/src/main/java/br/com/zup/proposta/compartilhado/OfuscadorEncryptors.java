@@ -11,10 +11,11 @@ public class OfuscadorEncryptors implements AttributeConverter<String, String>{
 //@param atributo será ofuscado (bando de dados)
 //@return documento criptografado (bando de dados)
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public String convertToDatabaseColumn(String documento) {
 		try {
-           return Encryptors.queryableText("${proposta.ofuscar.dados}", "12345678").encrypt(documento);
+           return Encryptors.queryableText("${proposta.ofuscar.dados}", "senha").encrypt(documento);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -28,7 +29,7 @@ public class OfuscadorEncryptors implements AttributeConverter<String, String>{
 	@Override
 	public String convertToEntityAttribute(String documento) {
 		try {
-           return Encryptors.queryableText("${proposta.ofuscar.dados}", "12345678").decrypt(documento);
+           return Encryptors.queryableText("${proposta.ofuscar.dados}", "senha").decrypt(documento);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }	
