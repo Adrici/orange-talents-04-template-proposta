@@ -24,7 +24,7 @@ public class CartaoScheduler {
 	@Scheduled(fixedRateString = "${atualizacao.scheduler}")
     public void verificaSituacaoNoCartao() {
 		
-		System.out.println("Ufa, deu certo!");
+		System.out.println("Ebaa, deu certo!");
 		
 
 		var propostasAprovadas = propostaRepository.findAll();
